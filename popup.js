@@ -290,22 +290,4 @@ function downloadEvent(eventId) {
 }
 
 
-// function getCurrentlyDownloadingEvents() {
-//     return new Promise((resolve, reject) => {
-//         chrome.storage.local.get({ 'downloadQueue': [] }, async (items) => {
-//             if (chrome.runtime.lastError) {
-//                 reject(chrome.runtime.lastError);
-//             }
-
-//             let currentlyDownloadingEvents = [];
-//             let dq = items['downloadQueue'];
-
-//             dq.forEach(queueItem => {
-//                 currentlyDownloadingEvents.push(queueItem.event);
-//             });
-//             resolve(currentlyDownloadingEvents);
-//         });
-//     });
-// }
-
 window.setTimeout(updateDownloads, 1000);
