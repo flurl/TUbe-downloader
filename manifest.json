@@ -1,0 +1,30 @@
+{
+    "name": "TUbe Downloader",
+    "description": "Download Videos from tube.tugraz.at",
+    "version": "1",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "scripting",
+        "downloads",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://tube.tugraz.at/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/icon16.png",
+            "32": "/images/icon32.png",
+            "48": "/images/icon48.png",
+            "128": "/images/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/icon16.png",
+        "32": "/images/icon32.png",
+        "48": "/images/icon48.png",
+        "128": "/images/icon128.png"
+    }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="TUbe-dl.css">
+  </head>
+  <body>
+    <h2>Events on current page</h2>
+    <div id="loading_spinner" class="lds-facebook"><div></div><div></div><div></div></div>
+    <p id="no_events_message">No events found on current page</p>
+    <table id="events_table">
+      <thead>
+        <td>Resolution</td>
+        <td>Title</td>
+        <td></td>
+        <td>Check all<br><input type="checkbox" id="check_all_checkbox"></td>
+      </thead>
+      <tbody id="events_container"></tbody>
+    </table>
+    <button id="download_checked_button">Download checked</button>
+    <h2>Downloads</h2>
+    <button id="clear_downloads_button">Clear Downloads</button>
+    <table id="progress_bars"></table>
+    <script src="popup.js"></script>
+  </body>
+</html>
