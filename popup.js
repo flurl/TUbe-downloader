@@ -144,7 +144,7 @@ async function getEvents() {
     if (url.hostname === 'tube.tugraz.at') {
         const urlParams = new URLSearchParams(url.search);
         // on a series overview page
-        if (url.pathname === '/paella/ui/browse.html') {
+        if (url.pathname.includes('/portal/courses')) {
             const seriesId = urlParams.get('series');
             let response = await fetch('https://tube.tugraz.at/api/events?sort=start_date:DESC&filter=is_part_of:' + seriesId)
             if (response.status !== 200) {
@@ -154,8 +154,13 @@ async function getEvents() {
             }
             events = await response.json()
         // on a single event watch page
-        } else if (url.pathname === '/paella/ui/watch.html') {
-            const eventId = urlParams.get('id');
+        } else if (url.pathname.includes('/portal/watch')) {
+            const eventId = url.pathname.split('/').pop();
+            console.log('Single event page detected, event id: ' + eventId);
+            if(!eventId){
+                console.log('No event id found in url!');
+                return;
+            }
             events[0] = await getEventById(eventId);
         }
 
